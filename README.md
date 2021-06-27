@@ -14,7 +14,7 @@ CSV data sets for the different cities and customer was provided by Udacity.
 
 ### **Credits**
 
-The main function to execute the code was provided by Udacity. Each of the other functions where constructed by me. 
+The main function to execute the code was provided by Udacity. Each of the other functions were constructed by me. 
 
 
 
