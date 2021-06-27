@@ -8,9 +8,9 @@ This project was created within the scope of the Data Science Nanodegree program
 
 ### **Files used**
 
-Pandas is used to compute descriptive statistics. 
+* Pandas is used to compute descriptive statistics. 
 
-CSV data sets for the different cities and customer was provided by Udacity.
+* CSV data sets for the different cities and customer was provided by Udacity.
 
 ### **Credits**
 
