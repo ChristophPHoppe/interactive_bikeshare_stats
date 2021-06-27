@@ -1,17 +1,21 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
+Created: June 27th 2021
 
-### Date created
-Include the date you created this project and README file.
+# Interactive BikeShare Statistics
 
-### Project Title
-Replace the Project Title
+### **Description**
 
-### Description
-Describe what your project is about and what it does
+This project was created within the scope of the Data Science Nanodegree program from Udacity. The project analyses data of a bikeshare company using individual user input. The user is able to decide on the city - either New York City, Chicago or Washington - and on the time scope, whether monthly or daily data should be evaluated.
 
-### Files used
-Include the files used
+### **Files used**
 
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Pandas is used to compute descriptive statistics. 
+
+CSV data sets for the different cities and customer was provided by Udacity.
+
+### **Credits**
+
+The main function to execute the code was provided by Udacity. Each of the other functions where constructed by me. 
+
+
+
 
