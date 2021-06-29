@@ -108,15 +108,15 @@ def time_stats(df):
     best_month_int = df["month"].mode()[0]
     months = ["january", "february", "march", "april", "may", "june"]
     best_month_str = months[best_month_int - 1]
-    print("The most frequent month was: {}.".format(best_month_str))
+    print("Most frequent month: {}.".format(best_month_str))
 
     best_day_int = df["day_of_week"].mode()[0]
     days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
     best_day_str = days[best_day_int]
-    print("\nThe most frequent day was: {}.".format(best_day_str))
+    print("\nMost frequent day: {}.".format(best_day_str))
     
     best_hour = df["Start Time"].dt.hour.mode()[0]
-    print("\nThe most requested Start Hour was: {}.".format(best_hour))
+    print("\nMost frequent start time: {}.".format(best_hour))
     
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -132,14 +132,14 @@ def station_stats(df):
     start_time = time.time()
 
     best_start_station = df["Start Station"].mode()[0]
-    print("\nMost common Start Station: {}.".format(best_start_station))
+    print("\nMost frequent start station: {}.".format(best_start_station))
 
     best_end_station = df["End Station"].mode()[0]
-    print("\nMost common End Station: {}.".format(best_end_station))
+    print("\nMost frequent end station: {}.".format(best_end_station))
 
     df["Start and End Station"] = df["Start Station"].str.cat(df["End Station"], sep = " - ")
     most_common_combination = df["Start and End Station"].mode()[0]
-    print("\nMost common combination of Start and End Station: {}.".format(most_common_combination))
+    print("\nMost frequent combination of start and end station: {}.".format(most_common_combination))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -156,10 +156,10 @@ def trip_duration_stats(df):
 
     Tot_travel_time = df["Trip Duration"].sum()
     Tot_travel_time_h = Tot_travel_time/3600
-    print("The total travel time was {:,.2f} hours.".format(Tot_travel_time_h))
+    print("Total travel time: {:,.2f} hours.".format(Tot_travel_time_h))
 
     mean_travel_time = df["Trip Duration"].mean()
-    print("\nThe average travel time was {:,.2f} minutes".format(mean_travel_time/60))
+    print("\nAverage travel time: {:,.2f} minutes".format(mean_travel_time/60))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -179,15 +179,15 @@ def user_stats(df):
 
     for i in range(set_stop_user):
         if user_type_series[i] > 1:
-            print("\nThere were {:,} customers of User Type {}.".format(user_type_series[i], user_type_series.index[i]))
+            print("\nCustomers of user type {}: {:,}.".format(user_type_series.index[i], user_type_series[i]))
         else:
-            print("\nThere was {:,} customer of User Type {}.".format(user_type_series[i], user_type_series.index[i])) 
+            print("\nCustomers of user type {}: {:,}.".format(user_type_series.index[i], user_type_series[i])) 
 
     if "Gender" in df.columns:
         gender_series = df["Gender"].value_counts()
 
         for i in range(2):
-            print("\nThere were {:,} {} customers.".format(gender_series[i], gender_series.index[i]))
+            print("\n{} customers: {:,}.".format(gender_series.index[i], gender_series[i]))
 
     else: 
         print("\nUnfortunately, there is no data on gender available for your request.")
@@ -197,8 +197,9 @@ def user_stats(df):
         min_age = df["Birth Year"].min()
         most_common_age = df["Birth Year"].mode()[0]
 
-        print("\nThe oldest customer was born in {:.0f} - the youngest in {:.0f}.".format(min_age, max_age))
-        print("\nThe most customers were born in {:.0f}.".format(most_common_age))
+        print("\nBirth year oldest customer: {:.0f}.".format(min_age))
+        print("\nBirth year youngest customer: {:.0f}.".format(max_age))
+        print("\nMost frequent birth year: {:.0f}.".format(most_common_age))
 
     else: 
         print("\nUnfortunately, there is no data on birth year available for your request.")
