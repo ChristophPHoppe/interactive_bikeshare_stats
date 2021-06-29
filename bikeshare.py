@@ -16,7 +16,7 @@ def get_filters():
     """
     print("\nHello! Let\'s explore some US bikeshare data!\n")
 
-    print("Which City do you want to receive information about?\n\nType either \"chicago\", \"washington\" or \"new york city\", or in case you want all to be analyzed, type \"all\".")
+    print("Which City do you want to receive information about?\n\nType either \"chicago\", \"washington\", \"new york city\" or \"all\".")
 
     city = input().lower()
 
@@ -24,7 +24,7 @@ def get_filters():
         print("Something went wrong. Please try again.")
         city = input()
 
-    print("\nWhich months should be considered?\n\nType either a specific month (until june (incl.)), or \"all\", if you want all months to be considered.")
+    print("\nWhich months should be considered?\n\nType either a specific month or \"all\".\n\n Please note that data is available until june.")
 
     month = input().lower()
 
@@ -36,7 +36,7 @@ def get_filters():
             print("Something went wrong. Please try again.")
             month = input().lower()
 
-    print("\nWhich weekday should be included?\n\nType either a specific weekday, or \"all\", if you want all days to be considered.")
+    print("\nWhich weekday should be included?\n\nType either a specific weekday or \"all\".")
 
     day = input().lower()
 
@@ -210,13 +210,13 @@ def user_stats(df):
 def raw_data(df):
     """ Displays raw data to the user. On request the user is able to extent the raw data by five lines per repetition. """
 
-    raw_data_request = input("\nDo you want to take a look at the raw data?\n\nPress Enter to display the first five lines or enter \"no\" to continue with descriptive statistics.")
+    raw_data_request = input("\nDo you want to take a look at the raw data?\n\nPress Enter to display the first five lines or type \"no\" to continue with descriptive statistics.")
 
     count = 1
     while raw_data_request == "":
         print(df.head(count*5))
         count += 1
-        raw_data_request = input("\nFor additional lines of raw data press Enter. In case you want to continue with descriptive statistcs, enter \"no\".")
+        raw_data_request = input("\nFor additional lines of raw data press Enter. In case you want to continue with descriptive statistcs, type \"no\".")
 
 def main():
     while True:
